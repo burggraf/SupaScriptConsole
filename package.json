@@ -2,12 +2,11 @@
   "name": "supascriptconsole",
   "version": "1.0.0",
   "description": "Javascript library for local console logging of Supabase rpc calls (PostgreSQL functions)",
-  "main": "dist/main/index.js",
-  "module": "dist/module/index.js",
-  "types": "dist/main/index.d.ts",
+  "main": "./dist/main/index.js",
+  "module": "./dist/module/index.js",
+  "types": "./dist/main/index.d.ts",
   "files": [
-    "dist",
-    "src"
+    "dist"
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",

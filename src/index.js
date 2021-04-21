@@ -1,14 +1,14 @@
 import { createClient } from '@supabase/supabase-js';
 
-subscription = null;
 
 export default class SupaScriptConsoleLoggingService {
   
     constructor() { 
       this.subscription = this.StartSupaScriptConsoleLogging({ url: key.SUPABASE_URL, key: key.SUPABASE_KEY});
     }
+    subscription = null;
   
-    StartSupaScriptConsoleLogging(obj) {
+    StartSupaScriptConsoleLogging = (obj) => {
       const style = {
         'INFO': 'color: white; background: darkgreen;',
         'ASSERT': 'color: white; background: darkred;',
@@ -46,7 +46,7 @@ export default class SupaScriptConsoleLoggingService {
       .subscribe();
       return subscription;
     }
-    StopSupaScriptConsoleLogging(subscription) {
+    StopSupaScriptConsoleLogging = (subscription) => {
       if (!subscription) {
         subscription = this.subscription;
       }

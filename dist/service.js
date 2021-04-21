@@ -53,3 +53,4 @@ class SupaScriptConsoleLoggingService {
     }
 }
 exports.SupaScriptConsoleLoggingService = SupaScriptConsoleLoggingService;
+//# sourceMappingURL=service.js.map

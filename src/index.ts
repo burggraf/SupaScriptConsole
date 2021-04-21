@@ -1,4 +1,4 @@
-import { createClient, RealtimeSubscription, SupabaseClient } from '@supabase/supabase-js';
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
 
 export default class SupaScriptConsoleLoggingService {
     subscription: any;

@@ -1,5 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
-export default class SupaScriptConsoleLoggingService {
+class SupaScriptConsoleLoggingService {
     constructor(obj) {
         this.StartSupaScriptConsoleLogging = (obj) => {
             const style = {
@@ -49,4 +49,5 @@ export default class SupaScriptConsoleLoggingService {
         this.subscription = this.StartSupaScriptConsoleLogging(obj);
     }
 }
+export { SupaScriptConsoleLoggingService };
 //# sourceMappingURL=index.js.map

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.SupaScriptConsoleLoggingService = void 0;
 const supabase_js_1 = require("@supabase/supabase-js");
 class SupaScriptConsoleLoggingService {
     constructor(obj) {
@@ -51,5 +52,5 @@ class SupaScriptConsoleLoggingService {
         this.subscription = this.StartSupaScriptConsoleLogging(obj);
     }
 }
-exports.default = SupaScriptConsoleLoggingService;
+exports.SupaScriptConsoleLoggingService = SupaScriptConsoleLoggingService;
 //# sourceMappingURL=index.js.map

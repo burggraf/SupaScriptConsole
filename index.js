@@ -52,3 +52,4 @@ export class SupaScriptConsoleLoggingService {
       subscription.unsubscribe();
     }
 }
+module.exports = SupaScriptConsoleLoggingService;

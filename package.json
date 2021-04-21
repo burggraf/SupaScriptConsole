@@ -2,18 +2,18 @@
   "name": "supascriptconsole",
   "version": "1.0.0",
   "description": "Javascript library for local console logging of Supabase rpc calls (PostgreSQL functions)",
-  "main": "index.js",
+  "main": "dist/index_bundle.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/burggraf/SupaScriptConsole.git"
   },
   "keywords": [
-    "Supabase",
-    "PostgreSQL",
-    "Javascript"
+    "supabase",
+    "postgresql",
+    "javascript"
   ],
   "author": "Mark Burggraf",
   "license": "ISC",
@@ -23,5 +23,12 @@
   "homepage": "https://github.com/burggraf/SupaScriptConsole#readme",
   "dependencies": {
     "@supabase/supabase-js": "^1.11.7"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.16",
+    "@babel/preset-env": "^7.13.15",
+    "babel-loader": "^8.2.2",
+    "webpack": "^5.35.0",
+    "webpack-cli": "^4.6.0"
   }
 }

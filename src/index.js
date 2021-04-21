@@ -1,7 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
 
-export class SupaScriptConsoleLoggingService {
-    subscription = null;
+let subscription = null;
+
+export default class SupaScriptConsoleLoggingService {
   
     constructor() { 
       this.subscription = this.StartSupaScriptConsoleLogging({ url: key.SUPABASE_URL, key: key.SUPABASE_KEY});
@@ -52,4 +53,3 @@ export class SupaScriptConsoleLoggingService {
       subscription.unsubscribe();
     }
 }
-module.exports = SupaScriptConsoleLoggingService;

@@ -8,7 +8,10 @@
   ],
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
+    "build": "run-s build:*",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "build:umd": "webpack",
     "publish-lib": "npm run build && npm publish",
     "publish-beta": "npm run build && npm publish --tag beta",
     "publish-dryrun": "npm run build && npm publish --dry-run"
@@ -32,6 +35,11 @@
     "@supabase/supabase-js": "^1.11.7"
   },
   "devDependencies": {
-    "typescript": "^3.9.9"
+    "npm-run-all": "^4.1.5",
+    "run-s": "*",
+    "ts-loader": "^9.0.2",
+    "typescript": "^3.9.9",
+    "webpack": "^5.35.0",
+    "webpack-cli": "^4.6.0"
   }
 }

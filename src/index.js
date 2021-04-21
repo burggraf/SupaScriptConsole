@@ -6,7 +6,7 @@ export default class SupaScriptConsoleLoggingService {
     constructor() { 
       this.subscription = this.StartSupaScriptConsoleLogging({ url: key.SUPABASE_URL, key: key.SUPABASE_KEY});
     }
-    static subscription = null;
+    static subscription;
   
     StartSupaScriptConsoleLogging = (obj) => {
       const style = {

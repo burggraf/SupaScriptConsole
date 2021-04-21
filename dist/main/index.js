@@ -1,5 +1,7 @@
-import { createClient } from '@supabase/supabase-js';
-export default class SupaScriptConsoleLoggingService {
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const supabase_js_1 = require("@supabase/supabase-js");
+class SupaScriptConsoleLoggingService {
     constructor(obj) {
         this.StartSupaScriptConsoleLogging = (obj) => {
             const style = {
@@ -23,7 +25,7 @@ export default class SupaScriptConsoleLoggingService {
                 supabase = obj.supabase;
             }
             else if (obj.url && obj.key) {
-                supabase = createClient(obj.url, obj.key);
+                supabase = supabase_js_1.createClient(obj.url, obj.key);
             }
             else {
                 console.error('%c %s ', style.ERROR, '\Error connecting to PostgreSQL ... you must either pass an object with a Supabase Client { supabase: mySupabaseClientObject } or an object with url and key { url: "https://xxx.supabase.co", key: "anon-key"} \n');
@@ -49,4 +51,5 @@ export default class SupaScriptConsoleLoggingService {
         this.subscription = this.StartSupaScriptConsoleLogging(obj);
     }
 }
+exports.default = SupaScriptConsoleLoggingService;
 //# sourceMappingURL=index.js.map

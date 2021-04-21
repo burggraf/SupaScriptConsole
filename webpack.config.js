@@ -5,10 +5,10 @@ module.exports = {
   entry: './src/index.ts',
   output: {
     path: path.resolve(__dirname, 'dist/umd'),
-    filename: 'supabase.js',
+    filename: 'supascriptconsole.js',
     library: {
       type: 'umd',
-      name: 'supabase',
+      name: 'supascriptconsole',
     },
   },
   mode: "production",

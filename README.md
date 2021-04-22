@@ -27,11 +27,11 @@ import { startLogging } from 'supascriptconsole';
 ```
 Now just call it in your code (usually in a constructor or other startup code):
 
-Option 1: call it with your Supabase url and public (anonymous) key:
+### Option 1: call it with your Supabase url and public (anonymous) key:
 ```js
 startLogging({url: 'https://xxxxxxxxxxxxxxxxxxxx.supabase.co', key:'yyyyyyyyyyyyyyyyyyyyyyyyyyy'});
 ```
-Option 2: call it with your Supabase object:
+### Option 2: call it with your Supabase object:
 ```js
 import { createClient, SupabaseClient } from '@supabase/supabase-js';
 // then

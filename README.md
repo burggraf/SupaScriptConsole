@@ -12,3 +12,24 @@ Here's a screen shot of the Google Chrome Console showing console logging for a 
 And you can drill down on the "details" object to get complete details on the log item:
 
 ![Details Drill-down](./docs/sample_chome_console_details.png)
+
+## Install
+```
+npm install https://github.com/burggraf/SupaScriptConsole.git --save
+```
+
+## Usage
+Import the library at the top of your module:
+```js
+import { startLogging } from 'supascriptconsole';
+```
+Now just call it in your code (usually in a constructor or other startup code):
+```js
+startLogging({supabase: this.supabase});
+```
+To stop logging, just assign the output to a variable then call `unsubscribe()` on that variable later.
+```js
+this.subscription = startLogging({supabase: this.supabase});
+// later
+this.subscription.unsubscribe();
+```

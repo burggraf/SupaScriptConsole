@@ -15,7 +15,7 @@ And you can drill down on the "details" object to get complete details on the lo
 
 ## Install
 ```
-npm install https://github.com/burggraf/SupaScriptConsole.git --save
+npm install supascriptconsole --save
 ```
 
 ## Usage

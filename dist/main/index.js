@@ -28,10 +28,11 @@ function startLogging(obj) {
     }
     else {
         console.error('%c %s ', style.ERROR, '\Error connecting to PostgreSQL ... you must either pass an object with a Supabase Client { supabase: mySupabaseClientObject } or an object with url and key { url: "https://xxx.supabase.co", key: "anon-key"} \n');
-        return;
+        return null;
     }
     console.log('%c %s ', style.INFO, '\nConnected to PostgreSQL ... listening for console messages from SupaScript functions...\n');
-    const subscription = supabase
+    let subscription;
+    subscription = supabase
         .from('supascript_log')
         .on('INSERT', (payload) => {
         const type = payload.new.log_type;
@@ -39,10 +40,7 @@ function startLogging(obj) {
         console.log('%c pgFunc %o', style[type], ...payload.new.content, { details: payload.new });
     })
         .subscribe();
-    function stopLogging() {
-        subscription.unsubscribe();
-    }
-    return;
+    return subscription;
 }
 exports.startLogging = startLogging;
 //# sourceMappingURL=index.js.map

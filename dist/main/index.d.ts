@@ -1,4 +1,5 @@
-declare class SupaScriptConsoleLoggingService {
+declare const SupaScriptConsoleLoggingService: (obj: any) => SupaScriptConsoleLogging;
+declare class SupaScriptConsoleLogging {
     subscription: any;
     constructor(obj: any);
     StartSupaScriptConsoleLogging: (obj: any) => import("@supabase/supabase-js").RealtimeSubscription | null;

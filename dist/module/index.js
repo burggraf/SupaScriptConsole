@@ -1,5 +1,8 @@
 import { createClient } from '@supabase/supabase-js';
-class SupaScriptConsoleLoggingService {
+const SupaScriptConsoleLoggingService = (obj) => {
+    return new SupaScriptConsoleLogging(obj);
+};
+class SupaScriptConsoleLogging {
     constructor(obj) {
         this.StartSupaScriptConsoleLogging = (obj) => {
             const style = {

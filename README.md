@@ -33,3 +33,43 @@ this.subscription = startLogging({supabase: this.supabase});
 // later
 this.subscription.unsubscribe();
 ```
+## How to add logging to your SupaScript functions
+See the [SupaScript Console Docs](https://github.com/burggraf/SupaScript/blob/main/docs/console.md)
+
+## Logging types supported
+In your SupaScript functions, you can use:
+```js
+console.log();
+console.info();
+console.warn();
+console.error();
+console.assert();
+console.time();
+console.timeEnd()
+```
+
+## SupaScript (server side) complete example
+```js
+create or replace function test_console() returns text as $$
+  console.time('test-my-function');
+  console.log('logged to the console at:', new Date());
+  for (let x = 0; x < 100000; x++) {
+    const busyWork = 'this is loop #' + x.toString();
+  }
+  console.log('strings', 12345, {'object': {'with': 'nested', 'items': [1, 2, 3, 'Go!']}});
+  console.info('shows up in green');
+  console.warn('shows up in yellow');
+  console.error('shows up in red');
+  console.assert(false, 'only logs if the first parameter evaluates to false');
+
+  console.timeEnd('test-my-function'); // profiling FTW!
+  return 'ok';
+$$ language plv8;
+```
+
+## Call the server function in your client code
+```js
+const { data, error } = await this.supabase
+.rpc('test_console');
+```
+Now you can call the function from your client code and view the console debug messages right in your browser while testing your app!

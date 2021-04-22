@@ -19,14 +19,29 @@ npm install https://github.com/burggraf/SupaScriptConsole.git --save
 ```
 
 ## Usage
+To use it, just call the `startLogging()` function and pass it an object. The object can either contain a reference to a `Supabase object` you've already opened with the `supabase.js` library, or it can contain `url` and (anon) `key` strings.  (See both examples below)
+
 Import the library at the top of your module:
 ```js
 import { startLogging } from 'supascriptconsole';
 ```
 Now just call it in your code (usually in a constructor or other startup code):
+
+Option 1: call it with your Supabase url and public (anonymous) key:
 ```js
-startLogging({supabase: this.supabase});
+startLogging({url: 'https://xxxxxxxxxxxxxxxxxxxx.supabase.co', key:'yyyyyyyyyyyyyyyyyyyyyyyyyyy'});
 ```
+Option 2: call it with your Supabase object:
+```js
+import { createClient, SupabaseClient } from '@supabase/supabase-js';
+// then
+supabase = createClient(myUrl, myKey);
+// start logging using the supabase object (which you'll probably use later to call your .rpc functions!
+startLogging({supabase: this.supabase});
+// Let's call a server function so we can see some pretty console output in our browser console!
+const { data, error } = await this.supabase.rpc('test_console');
+```
+
 To stop logging, just assign the output to a variable then call `unsubscribe()` on that variable later.
 ```js
 this.subscription = startLogging({supabase: this.supabase});

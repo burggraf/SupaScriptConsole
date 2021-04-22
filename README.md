@@ -11,4 +11,4 @@ Here's a screen shot of the Google Chrome Console showing console logging for a 
 
 And you can drill down on the "details" object to get complete details on the log item:
 
-![Details Drill-down](./docs/sample_chrome_console_details.png)
+![Details Drill-down](./docs/sample_chome_console_details.png)

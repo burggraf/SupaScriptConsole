@@ -3,12 +3,12 @@ import { createClient, SupabaseClient, RealtimeSubscription } from '@supabase/su
   
    function startLogging (obj: any): RealtimeSubscription | null {
     const style: any = {
-        'INFO': 'color: white; background: darkgreen;',
-        'ASSERT': 'color: white; background: darkred;',
-        'ERROR': 'color: white; background: darkred;',
+        'INFO': 'color: white; background: darkgreen; border:1px solid darkgreen;',
+        'ASSERT': 'color: white; background: darkred; border:1px solid darkred;',
+        'ERROR': 'color: white; background: darkred; border:1px solid darkred;',
         'LOG': 'color: black; background: white; border:1px solid;',
         'TIMER': 'color: black; background: white; border:1px solid;',
-        'WARN': 'color: black; background: yellow;',
+        'WARN': 'color: black; background: yellow; border:1px solid;',
       };
       const icon: any = {
         'INFO': String.fromCodePoint(0x1f7e2),
